@@ -57,7 +57,7 @@ class Postgis < Formula
     args = [
       "--with-projdir=#{Formula["proj"].opt_prefix}",
       "--with-jsondir=#{Formula["json-c"].opt_prefix}",
-      "--with-pgconfig=#{Formula["postgresql"].opt_bin}/pg_config",
+      "--with-pgconfig=#{Formula["postgresql93"].opt_bin}/pg_config",
       # Unfortunately, NLS support causes all kinds of headaches because
       # PostGIS gets all of its compiler flags from the PGXS makefiles. This
       # makes it nigh impossible to tell the buildsystem where our keg-only
@@ -94,8 +94,8 @@ class Postgis < Formula
     bin.install Dir["stage/**/bin/*"]
     lib.install Dir["stage/**/lib/*"]
     include.install Dir["stage/**/include/*"]
-    (doc/"postgresql/extension").install Dir["stage/**/share/doc/postgresql/extension/*"]
-    (share/"postgresql/extension").install Dir["stage/**/share/postgresql/extension/*"]
+    (doc/"postgresql93/extension").install Dir["stage/**/share/doc/postgresql93/extension/*"]
+    (share/"postgresql93/extension").install Dir["stage/**/share/postgresql93/extension/*"]
     pkgshare.install Dir["stage/**/contrib/postgis-*/*"]
     (share/"postgis_topology").install Dir["stage/**/contrib/postgis_topology-*/*"]
 
@@ -128,7 +128,7 @@ class Postgis < Formula
       PostGIS plugin libraries installed to:
         #{HOMEBREW_PREFIX}/lib
       PostGIS extension modules installed to:
-        #{HOMEBREW_PREFIX}/share/postgresql/extension
+        #{HOMEBREW_PREFIX}/share/postgresql93/extension
       EOS
   end
 
