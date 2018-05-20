@@ -25,7 +25,7 @@ class Postgresql93 < Formula
   depends_on "readline"
   depends_on "libxml2" if MacOS.version <= :leopard # Leopard libxml is too old
   depends_on "ossp-uuid" => :recommended # ossp-uuid is no longer required for uuid support since 9.4beta2
-  depends_on :python => :optional
+  depends_on "python@2" => :optional
 
   conflicts_with "postgres-xc",
     :because => "postgresql and postgres-xc install the same binaries."
